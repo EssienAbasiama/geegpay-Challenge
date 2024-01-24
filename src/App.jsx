@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./App.css";
 import SideBar from "./components/Sidebar/SideBar";
 import Header from "./components/Header/Header";
+import MainBody from "./components/MainBody/MainBody";
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
         <SideBar />
         <div className="body">
           <Header />
+          <MainBody />
         </div>
       </div>
     </>
