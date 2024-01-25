@@ -9,7 +9,9 @@
   display: flex;
 }
 .body {
+  margin-left: 5%;
   width: 95%;
   background: #fafafa;
-  height: 100vh;
+  height: max-content;
+  padding-bottom: 20px;
 }

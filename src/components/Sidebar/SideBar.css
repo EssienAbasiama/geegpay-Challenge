@@ -1,6 +1,6 @@
 .sideBar {
   width: 5%;
-  background-color: red;
+  /* background-color: red; */
   height: 100vh;
   background: #f7f8fa;
   border-right: 1px solid #ebecf2;
@@ -8,6 +8,7 @@
   flex-direction: column;
   align-items: center;
   gap: 5rem;
+  position: fixed;
 }
 .nav-item-1,
 .nav-item-2 {
@@ -15,7 +16,8 @@
   flex-direction: column;
   align-items: center;
   padding-top: 1.3rem;
-  gap: 25px;
+  gap: 28px;
+  width: 100%;
 }
 .nav-item-1 > div,
 .nav-item-2 > div {
@@ -45,4 +47,32 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.sidebar-nav-item-container {
+  width: 100%;
+  height: max-content;
+  /* background-color: red; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-hover {
+  /* width: 4px;
+  height: 26px;
+
+  background-color: #0d062d;
+  position: absolute;
+  right: 0px;
+  border-bottom-left-radius: 30px;
+  border-top-left-radius: 30px; */
+}
+
+.sideBar-nav-active {
+  border-right: 4px solid #0d062d;
+}
+
+.sidebar-nav-item-container:hover {
+  border-right: 4px solid #0d062d;
 }

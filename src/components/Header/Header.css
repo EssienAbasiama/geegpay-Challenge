@@ -1,12 +1,13 @@
 .header {
   display: flex;
-  position: relative;
+  position: fixed;
+  width: 95%;
   align-items: center;
   height: 10vh;
+  justify-content: space-between;
   padding: 0px 25px;
   background: #fafafa;
   border-bottom: 2px solid #e5eaef;
-  justify-content: space-between;
 }
 h2 {
   font-size: 20px;
@@ -35,7 +36,7 @@ input::placeholder {
   align-items: center;
   padding: 3px 10px;
   gap: 5px;
-  height: 38px;
+  height: 42px;
   width: max-content;
   border-radius: 50px;
   border: 1px solid #dadddd;
@@ -52,7 +53,7 @@ input:focus {
 }
 .date_container {
   display: flex;
-  height: 38px;
+  height: 42px;
   align-items: center;
   gap: 10px;
 }
@@ -69,8 +70,8 @@ input:focus {
 }
 
 .Notification {
-  height: 38px;
-  width: 38px;
+  height: 42px;
+  width: 42px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -80,14 +81,13 @@ input:focus {
 }
 .profile {
   display: flex;
-  /* justify-content: center; */
   align-items: center;
   gap: 7px;
   cursor: pointer;
   border-radius: 28px;
   border: 1px solid #dadddd;
   padding: 4px 5px;
-  height: 38px;
+  /* height: 38px; */
 }
 
 .profile_details {
