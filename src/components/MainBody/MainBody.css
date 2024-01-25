@@ -410,6 +410,10 @@ input[type="range"]::-webkit-slider-thumb {
   background: var(--Red, #ff4a55);
 }
 
+.chart-container {
+  margin-top: 20px;
+}
+
 @media screen and (max-width: 1339px) {
   .order-footer > p {
     color: #606060;

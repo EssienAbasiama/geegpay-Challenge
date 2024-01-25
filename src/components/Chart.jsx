@@ -9,6 +9,7 @@ import {
   Tooltip,
   Rectangle,
 } from "recharts";
+import "./chart.css";
 
 const colors = [
   "linear-gradient(180deg, #34CAA5 0%, rgba(52, 202, 165, 0.00) 100%)",
@@ -143,7 +144,7 @@ const GradientBar = ({ fill, x, y, width, height }) => {
 export default function Charts() {
   return (
     <BarChart
-      width={700}
+      width={760}
       height={300}
       data={data}
       style={{ position: "relative", cursor: "pointer" }}

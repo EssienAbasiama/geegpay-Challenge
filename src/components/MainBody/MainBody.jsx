@@ -6,11 +6,11 @@ import woman03 from "./../../assets/images/woman03.png";
 import woman04 from "./../../assets/images/woman04.png";
 import Man05 from "./../../assets/images/Man05.png";
 import Header from "../Header/Header";
+import Charts from "../Chart";
 
 function MainBody() {
   return (
     <div>
-      
       <div className="top-container">
         <div className="sales-trend">
           <div className="sales-trend-header">
@@ -36,6 +36,9 @@ function MainBody() {
                 </svg>
               </div>
             </div>
+          </div>
+          <div className="chart-container">
+            <Charts />
           </div>
         </div>
         <div className="sales-graph">

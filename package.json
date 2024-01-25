@@ -12,7 +12,9 @@
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-tooltip": "^5.26.0",
     "recharts": "^2.10.4",
+    "tooltip": "^1.6.1",
     "tooltip-js": "^3.0.0"
   },
   "devDependencies": {

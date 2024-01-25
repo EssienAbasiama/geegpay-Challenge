@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./SideBar.css";
+import { Tooltip } from "react-tooltip";
 
 const svgData = [
   {
@@ -32,6 +33,8 @@ const svgData = [
         />
       </svg>
     ),
+    name: "Name",
+    position: "right",
   },
   {
     id: 2,
@@ -73,6 +76,8 @@ const svgData = [
         />
       </svg>
     ),
+    name: "Trend",
+    position: "bottom",
   },
   {
     id: 3,
@@ -114,6 +119,8 @@ const svgData = [
         />
       </svg>
     ),
+    name: "Box",
+    position: "top",
   },
   {
     id: 4,
@@ -162,6 +169,8 @@ const svgData = [
         />
       </svg>
     ),
+    name: "Discount",
+    position: "right",
   },
   {
     id: 5,
@@ -196,6 +205,8 @@ const svgData = [
         />
       </svg>
     ),
+    name: "Info",
+    position: "right",
   },
 ];
 
@@ -217,7 +228,16 @@ const SideBar = () => {
   return (
     <div className="sideBar">
       <div className="nav-item-1">
-        <div>
+        <Tooltip
+          place="bottom"
+          id="Logo"
+          style={{ borderRadius: "10px", fontSize: "12px" }}
+        />
+        <div
+          data-tooltip-id="Logo"
+          data-tooltip-content="Logo"
+          data-tooltip-place="Top"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="40"
@@ -234,16 +254,29 @@ const SideBar = () => {
           </svg>
         </div>
         {svgData.map((item) => (
-          <div
-            key={item.id}
-            id={`sidebar-item-${item.id}`}
-            className={`sidebar-nav-item-container ${
-              activeItemId === item.id ? "sideBar-nav-active" : ""
-            }`}
-            onClick={() => handleItemClick(item.id)}
-          >
-            {item.image}
-          </div>
+          <>
+            <div
+              key={item.id}
+              id={`sidebar-item-${item.id}`}
+              className={`sidebar-nav-item-container ${
+                activeItemId === item.id ? "sideBar-nav-active" : ""
+              }`}
+              onClick={() => handleItemClick(item.id)}
+            >
+              <Tooltip
+                place={item.position}
+                id={item.id}
+                style={{ borderRadius: "10px", fontSize: "12px" }}
+              />
+              <div
+                data-tooltip-id={item.id}
+                data-tooltip-content={item.name}
+                data-tooltip-place={item.position}
+              >
+                {item.image}
+              </div>
+            </div>
+          </>
         ))}
 
         <div className="theme-switch">
@@ -354,7 +387,16 @@ const SideBar = () => {
         </div>
       </div>
       <div className="nav-item-2">
-        <div>
+        <Tooltip
+          place="right"
+          id="return"
+          style={{ borderRadius: "10px", fontSize: "12px" }}
+        />
+        <div
+          data-tooltip-id="return"
+          data-tooltip-content="Return"
+          data-tooltip-place="right"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -385,7 +427,16 @@ const SideBar = () => {
             />
           </svg>
         </div>
-        <div>
+        <Tooltip
+          place="right"
+          id="settings"
+          style={{ borderRadius: "10px", fontSize: "12px" }}
+        />
+        <div
+          data-tooltip-id="settings"
+          data-tooltip-content="Settings"
+          data-tooltip-place="right"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -419,7 +470,16 @@ const SideBar = () => {
             />
           </svg>
         </div>
-        <div>
+        <Tooltip
+          place="right"
+          id="Logout"
+          style={{ borderRadius: "10px", fontSize: "12px" }}
+        />
+        <div
+          data-tooltip-id="Logout"
+          data-tooltip-content="Logout"
+          data-tooltip-place="right"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
