@@ -48,8 +48,6 @@
 }
 
 .theme-switch {
-  /* height: 75px; */
-  /* width: 43px; */
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -75,21 +73,12 @@
 .sidebar-nav-item-container {
   width: 100%;
   height: max-content;
-  /* background-color: red; */
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .nav-hover {
-  /* width: 4px;
-  height: 26px;
-
-  background-color: #0d062d;
-  position: absolute;
-  right: 0px;
-  border-bottom-left-radius: 30px;
-  border-top-left-radius: 30px; */
 }
 
 .sideBar-nav-active {
@@ -98,4 +87,7 @@
 
 .sidebar-nav-item-container:hover {
   border-right: 4px solid #0d062d;
+}
+
+@media screen and (max-width: 768px) {
 }

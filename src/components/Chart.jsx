@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   BarChart,
   Bar,
@@ -7,6 +7,7 @@ import {
   YAxis,
   CartesianGrid,
   Tooltip,
+  ResponsiveContainer,
   Rectangle,
 } from "recharts";
 import "./chart.css";
@@ -142,68 +143,93 @@ const GradientBar = ({ fill, x, y, width, height }) => {
 };
 
 export default function Charts({ darkModeTheme }) {
+  const [chartHeight, setChartHeight] = useState(300);
+
+  useEffect(() => {
+    const handleResize = () => {
+      const screenWidth = window.innerWidth;
+
+      // Adjust the height based on the screen width
+      if (screenWidth <= 1122) {
+        setChartHeight(270);
+      } else {
+        setChartHeight(300); // Default height for larger screens
+      }
+    };
+
+    // Update the chart height on mount and when the window is resized
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    // Cleanup the event listener on component unmount
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
   return (
-    <BarChart
-      width={760}
-      height={300}
-      data={data}
-      style={{ position: "relative", cursor: "pointer" }}
-    >
-      <CartesianGrid
-        stroke={darkModeTheme ? "#555" : "#ddd"}
-        strokeDasharray="3 3"
-        vertical={false}
-      />
-      <XAxis
-        dataKey="name"
-        tickCount={12}
-        tick={{
-          fontSize: 14,
-          fontWeight: 600,
-          lineHeight: "22px",
-          fill: darkModeTheme ? "rgb(189, 187, 187)" : "#525252",
-          textAlign: "center",
-          color: "#525252",
-        }}
-        tickSize={0}
-        tickMargin={20}
-        axisLine={false}
-      />
-      <YAxis
-        dataKey="uv"
-        tick={<CustomYAxisTick darkModeTheme={darkModeTheme} />} // Pass darkModeTheme as a prop
-        tickCount={9}
-        tickSize={0}
-        tickMargin={35}
-        axisLine={false}
-        domain={[0, 50.0]}
-      />
-      <Tooltip
-        cursor={{ fill: "transparent" }}
-        wrapperStyle={{
-          //   background: "black",
-          background: darkModeTheme ? "white" : "black",
-          position: "absolute",
-          top: "-60px",
-          left: "-48px",
-          transform: "translate(-50%, -100%)",
-          borderRadius: "10px",
-          cursor: "pointer",
-          color: "black",
-        }}
-        content={<CustomTooltip />}
-      />
-      <Bar
-        dataKey="uv"
-        fill={
-          darkModeTheme
-            ? "rgba(52, 202, 165, 0.80)"
-            : "rgba(52, 202, 165, 0.50)"
-        } // Change "your-dark-mode-color" to the color you want for dark mode
-        opacity={0.5}
-        radius={[20, 20, 0, 0]}
-        activeBar={<GradientBar />}
-      />
-    </BarChart>
+    <ResponsiveContainer width="100%" height={chartHeight}>
+      <BarChart
+        width="fit-content"
+        height={300}
+        data={data}
+        style={{ position: "relative", cursor: "pointer" }}
+      >
+        <CartesianGrid
+          stroke={darkModeTheme ? "#555" : "#ddd"}
+          strokeDasharray="3 3"
+          vertical={false}
+        />
+        <XAxis
+          dataKey="name"
+          tickCount={12}
+          tick={{
+            fontSize: 14,
+            fontWeight: 600,
+            lineHeight: "22px",
+            fill: darkModeTheme ? "rgb(189, 187, 187)" : "#525252",
+            textAlign: "center",
+            color: "#525252",
+          }}
+          tickSize={0}
+          tickMargin={20}
+          axisLine={false}
+        />
+        <YAxis
+          dataKey="uv"
+          tick={<CustomYAxisTick darkModeTheme={darkModeTheme} />} // Pass darkModeTheme as a prop
+          tickCount={9}
+          tickSize={0}
+          tickMargin={35}
+          axisLine={false}
+          domain={[0, 50.0]}
+        />
+        <Tooltip
+          cursor={{ fill: "transparent" }}
+          wrapperStyle={{
+            //   background: "black",
+            background: darkModeTheme ? "white" : "black",
+            position: "absolute",
+            top: "-60px",
+            left: "-48px",
+            transform: "translate(-50%, -100%)",
+            borderRadius: "10px",
+            cursor: "pointer",
+            color: "black",
+          }}
+          content={<CustomTooltip />}
+        />
+        <Bar
+          dataKey="uv"
+          fill={
+            darkModeTheme
+              ? "rgba(52, 202, 165, 0.80)"
+              : "rgba(52, 202, 165, 0.50)"
+          } // Change "your-dark-mode-color" to the color you want for dark mode
+          opacity={0.5}
+          radius={[20, 20, 0, 0]}
+          activeBar={<GradientBar />}
+        />
+      </BarChart>
+    </ResponsiveContainer>
   );
 }

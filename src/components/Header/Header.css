@@ -141,3 +141,40 @@ input:focus {
   font-weight: 500;
   line-height: 22px; /* 157.143% */
 }
+
+@media screen and (max-width: 1142px) {
+  .header {
+    display: flex;
+    position: fixed;
+    width: 92%;
+    align-items: center;
+    height: 10vh;
+    justify-content: space-between;
+    padding: 0px 25px;
+    z-index: 1000;
+  }
+
+  .sideBar {
+    width: 8%;
+    /* background-color: red; */
+    height: 100vh;
+    /* background: #f7f8fa; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5rem;
+    position: fixed;
+  }
+  .body {
+    margin-left: 8%;
+    width: 92%;
+    height: max-content;
+    padding-bottom: 20px;
+  }
+  .header_nav_Item {
+    gap: 10px;
+  }
+  input {
+    width: 13rem;
+  }
+}

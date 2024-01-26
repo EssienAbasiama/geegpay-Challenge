@@ -525,8 +525,54 @@ input[type="range"]::-webkit-slider-thumb {
     width: 90px;
   }
 }
-@media screen and (max-width: 1023px) {
-  /* .sideBar {
-    width: 5rem;
-  } */
+
+@media screen and (max-width: 768px) {
+  .header {
+    width: 100%;
+  }
+
+  .profile {
+    display: none;
+  }
+
+  .sideBar {
+    display: none;
+    width: 10%;
+    z-index: 10000;
+  }
+  .body {
+    margin-left: 0;
+    width: 100%;
+  }
+  .top-container {
+    display: flex;
+    flex-direction: column;
+  }
+  .sales-trend {
+    width: 100%;
+  }
+  .sales-graph {
+    height: 24rem;
+    width: 100%;
+  }
+  .bottom-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .lastOrder {
+    width: 100%;
+  }
+  .top-platform {
+    width: 100%;
+  }
+  .top-container {
+    gap: 24px;
+  }
+  .order {
+    gap: 20px;
+  }
+  .sales-graph {
+    gap: 20px;
+  }
 }
