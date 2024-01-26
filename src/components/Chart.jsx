@@ -152,6 +152,9 @@ export default function Charts({ darkModeTheme }) {
       // Adjust the height based on the screen width
       if (screenWidth <= 1122) {
         setChartHeight(270);
+      }
+      if (screenWidth <= 768) {
+        setChartHeight(305);
       } else {
         setChartHeight(300); // Default height for larger screens
       }
