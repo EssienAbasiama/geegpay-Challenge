@@ -2,9 +2,13 @@ import React from "react";
 import "./Header.css";
 import Profile from "./../../assets/images/HeaderProfile.png";
 
-function Header() {
+const Header = ({ darkModeTheme }) => {
   return (
-    <div className="header">
+    <div
+      className={`header ${
+        darkModeTheme ? "header-darkmode" : "header-lightmode"
+      }`}
+    >
       <div className="title">
         <h2>Dashboard</h2>
       </div>
@@ -56,7 +60,13 @@ function Header() {
           {/* <div className="calendar_icon">
             
           </div> */}
-          <p className="date">November 15,2023</p>
+          <p
+            className={`date ${
+              darkModeTheme ? "header-text-dark-mode" : "header-text-light-mode"
+            }`}
+          >
+            November 15,2023
+          </p>
         </div>
         <div className="Notification">
           <svg
@@ -78,7 +88,13 @@ function Header() {
           <img src={Profile} />
 
           <div className="profile_details">
-            <p className="name">Justin Bergson</p>
+            <p
+              className={`name ${
+                darkModeTheme ? "header-text-dark-mode" : "light-name"
+              }`}
+            >
+              Justin Bergson
+            </p>
             <p className="email">Justin@gmail.com</p>
           </div>
           <svg
@@ -100,6 +116,6 @@ function Header() {
       </div>
     </div>
   );
-}
+};
 
 export default Header;

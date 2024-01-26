@@ -28,7 +28,7 @@ const data = [
   },
   {
     name: "Mar",
-    uv: "20.000",
+    uv: "12.000",
     tickCount: 15,
   },
   {
@@ -38,7 +38,7 @@ const data = [
   },
   {
     name: "May",
-    uv: "10.000",
+    uv: "18.000",
     tickCount: 25,
   },
   {
@@ -78,7 +78,7 @@ const data = [
   },
 ];
 
-const CustomYAxisTick = ({ x, y, payload }) => {
+const CustomYAxisTick = ({ x, y, payload, darkModeTheme }) => {
   const { value } = payload;
 
   return (
@@ -88,7 +88,7 @@ const CustomYAxisTick = ({ x, y, payload }) => {
         y={0}
         dy={16}
         textAnchor="middle"
-        fill="#525252"
+        fill={darkModeTheme ? "rgb(189, 187, 187)" : "#525252"} // Conditionally set fill color based on darkModeTheme
         style={{
           fontFamily: "Plus Jakarta Sans",
           fontSize: "12px",
@@ -141,7 +141,7 @@ const GradientBar = ({ fill, x, y, width, height }) => {
   );
 };
 
-export default function Charts() {
+export default function Charts({ darkModeTheme }) {
   return (
     <BarChart
       width={760}
@@ -149,7 +149,11 @@ export default function Charts() {
       data={data}
       style={{ position: "relative", cursor: "pointer" }}
     >
-      <CartesianGrid strokeDasharray="3 3" vertical={false} />
+      <CartesianGrid
+        stroke={darkModeTheme ? "#555" : "#ddd"}
+        strokeDasharray="3 3"
+        vertical={false}
+      />
       <XAxis
         dataKey="name"
         tickCount={12}
@@ -157,7 +161,7 @@ export default function Charts() {
           fontSize: 14,
           fontWeight: 600,
           lineHeight: "22px",
-          fill: "#525252",
+          fill: darkModeTheme ? "rgb(189, 187, 187)" : "#525252",
           textAlign: "center",
           color: "#525252",
         }}
@@ -167,7 +171,7 @@ export default function Charts() {
       />
       <YAxis
         dataKey="uv"
-        tick={<CustomYAxisTick />}
+        tick={<CustomYAxisTick darkModeTheme={darkModeTheme} />} // Pass darkModeTheme as a prop
         tickCount={9}
         tickSize={0}
         tickMargin={35}
@@ -177,19 +181,25 @@ export default function Charts() {
       <Tooltip
         cursor={{ fill: "transparent" }}
         wrapperStyle={{
-          background: "black",
+          //   background: "black",
+          background: darkModeTheme ? "white" : "black",
           position: "absolute",
           top: "-60px",
           left: "-48px",
           transform: "translate(-50%, -100%)",
           borderRadius: "10px",
           cursor: "pointer",
+          color: "black",
         }}
         content={<CustomTooltip />}
       />
       <Bar
         dataKey="uv"
-        fill={"rgba(52, 202, 165, 0.30)"}
+        fill={
+          darkModeTheme
+            ? "rgba(52, 202, 165, 0.80)"
+            : "rgba(52, 202, 165, 0.50)"
+        } // Change "your-dark-mode-color" to the color you want for dark mode
         opacity={0.5}
         radius={[20, 20, 0, 0]}
         activeBar={<GradientBar />}

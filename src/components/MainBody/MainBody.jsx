@@ -8,15 +8,31 @@ import Man05 from "./../../assets/images/Man05.png";
 import Header from "../Header/Header";
 import Charts from "../Chart";
 
-function MainBody() {
+const MainBody = ({ darkModeTheme }) => {
   return (
     <div>
       <div className="top-container">
-        <div className="sales-trend">
+        <div
+          className={`sales-trend ${
+            darkModeTheme ? "sales-trend-dark-mode" : "sales-trend-light-mode"
+          }`}
+        >
           <div className="sales-trend-header">
-            <h3>Sales Trends</h3>
+            <h3
+              style={{
+                color: darkModeTheme ? "rgb(255, 255, 255)" : "",
+              }}
+            >
+              Sales Trends
+            </h3>
             <div className="sales-trend-header-right">
-              <p>Shortby:</p>
+              <p
+                style={{
+                  color: darkModeTheme ? "rgb(255, 255, 255)" : "",
+                }}
+              >
+                Shortby:
+              </p>
               <div className="date-dropdown">
                 Weekly
                 {/* <div>
@@ -38,12 +54,18 @@ function MainBody() {
             </div>
           </div>
           <div className="chart-container">
-            <Charts />
+            <Charts darkModeTheme={darkModeTheme} />
           </div>
         </div>
         <div className="sales-graph">
           <div className="order">
-            <div className="order-detail-container">
+            <div
+              className={`order-detail-container ${
+                darkModeTheme
+                  ? "sales-trend-dark-mode"
+                  : "sales-trend-light-mode"
+              }`}
+            >
               <div className="order-item-header">
                 <div className="order-container-icon">
                   <svg
@@ -108,7 +130,14 @@ function MainBody() {
                 </svg>
               </div>
               <p className="order-title">Total Order</p>
-              <p className="order-figure">350</p>
+              <p
+                className="order-figure"
+                style={{
+                  color: darkModeTheme ? "rgb(255, 255, 255)" : "",
+                }}
+              >
+                350
+              </p>
               <div className="order-footer">
                 <div className="order-increase-container">
                   <svg
@@ -136,7 +165,13 @@ function MainBody() {
                 <p>VS. previous month</p>
               </div>
             </div>
-            <div className="order-detail-container">
+            <div
+              className={`order-detail-container ${
+                darkModeTheme
+                  ? "sales-trend-dark-mode"
+                  : "sales-trend-light-mode"
+              }`}
+            >
               <div className="order-item-header">
                 <div className="order-container-icon">
                   <svg
@@ -203,7 +238,14 @@ function MainBody() {
                 </svg>
               </div>
               <p className="order-title">Total Refund</p>
-              <p className="order-figure">270</p>
+              <p
+                className="order-figure"
+                style={{
+                  color: darkModeTheme ? "rgb(255, 255, 255)" : "",
+                }}
+              >
+                270
+              </p>
               <div className="order-footer">
                 <div className="order-decrease-container">
                   <svg
@@ -233,7 +275,13 @@ function MainBody() {
             </div>
           </div>
           <div className="order">
-            <div className="order-detail-container">
+            <div
+              className={`order-detail-container ${
+                darkModeTheme
+                  ? "sales-trend-dark-mode"
+                  : "sales-trend-light-mode"
+              }`}
+            >
               <div className="order-item-header">
                 <div className="order-container-icon">
                   <svg
@@ -296,7 +344,14 @@ function MainBody() {
                 </svg>
               </div>
               <p className="order-title">Average Sales</p>
-              <p className="order-figure">1567</p>
+              <p
+                className="order-figure"
+                style={{
+                  color: darkModeTheme ? "rgb(255, 255, 255)" : "",
+                }}
+              >
+                1567
+              </p>
               <div className="order-footer">
                 <div className="order-decrease-container">
                   <svg
@@ -324,7 +379,13 @@ function MainBody() {
                 <p>VS. previous month</p>
               </div>
             </div>
-            <div className="order-detail-container">
+            <div
+              className={`order-detail-container ${
+                darkModeTheme
+                  ? "sales-trend-dark-mode"
+                  : "sales-trend-light-mode"
+              }`}
+            >
               <div className="order-item-header">
                 <div className="order-container-icon">
                   <svg
@@ -383,7 +444,14 @@ function MainBody() {
                 </svg>
               </div>
               <p className="order-title">Total Income</p>
-              <p className="order-figure">$350.000</p>
+              <p
+                className="order-figure"
+                style={{
+                  color: darkModeTheme ? "rgb(255, 255, 255)" : "",
+                }}
+              >
+                $350.000
+              </p>
               <div className="order-footer">
                 <div className="order-increase-container">
                   <svg
@@ -415,9 +483,19 @@ function MainBody() {
         </div>
       </div>
       <div className="bottom-container">
-        <div className="lastOrder">
+        <div
+          className={`lastOrder ${
+            darkModeTheme ? "sales-trend-dark-mode" : "sales-trend-light-mode"
+          }`}
+        >
           <div className="sales-trend-header">
-            <h3>Last Orders</h3>
+            <h3
+              style={{
+                color: darkModeTheme ? "rgb(255, 255, 255)" : "",
+              }}
+            >
+              Last Orders
+            </h3>
             <div className="sales-trend-header-right">
               <p id="green-link" className="green-link">
                 See All
@@ -427,21 +505,70 @@ function MainBody() {
           <div>
             <table>
               <tr>
-                <th>Name</th>
-                <th>Date</th>
-                <th>Amount</th>
-                <th>Status</th>
-                <th>Invoice</th>
+                <th
+                  style={{
+                    color: darkModeTheme ? "rgb(255, 255, 255)" : "",
+                  }}
+                >
+                  Name
+                </th>
+                <th
+                  style={{
+                    color: darkModeTheme ? "rgb(255, 255, 255)" : "",
+                  }}
+                >
+                  Date
+                </th>
+                <th
+                  style={{
+                    color: darkModeTheme ? "rgb(255, 255, 255)" : "",
+                  }}
+                >
+                  Amount
+                </th>
+                <th
+                  style={{
+                    color: darkModeTheme ? "rgb(255, 255, 255)" : "",
+                  }}
+                >
+                  Status
+                </th>
+                <th
+                  style={{
+                    color: darkModeTheme ? "rgb(255, 255, 255)" : "",
+                  }}
+                >
+                  Invoice
+                </th>
               </tr>
               <tr className="row">
                 <td>
-                  <div className="flex order-name">
+                  <div
+                    className="flex order-name"
+                    style={{
+                      color: darkModeTheme ? "rgb(189 187 187)" : "",
+                    }}
+                  >
                     <img src={Man01} alt="" />
                     Marcus Bergson
                   </div>
                 </td>
-                <td className="order-date">Nov 15, 2023</td>
-                <td className="order-price">$80,000</td>
+                <td
+                  className="order-date"
+                  style={{
+                    color: darkModeTheme ? "rgb(189 187 187)" : "",
+                  }}
+                >
+                  Nov 15, 2023
+                </td>
+                <td
+                  className="order-price"
+                  style={{
+                    color: darkModeTheme ? "rgb(189 187 187)" : "",
+                  }}
+                >
+                  $80,000
+                </td>
                 <td className="green-paid">Paid</td>
                 <td>
                   <div className="flex order-view">
@@ -469,19 +596,44 @@ function MainBody() {
                         fill="#292D32"
                       />
                     </svg>
-                    <p>View</p>
+                    <p
+                      style={{
+                        color: darkModeTheme ? "rgb(189 187 187)" : "",
+                      }}
+                    >
+                      View
+                    </p>
                   </div>
                 </td>
               </tr>
               <tr className="row">
                 <td>
-                  <div className="flex order-name">
+                  <div
+                    className="flex order-name"
+                    style={{
+                      color: darkModeTheme ? "rgb(189 187 187)" : "",
+                    }}
+                  >
                     <img src={woman02} alt="" />
                     Jaydon Vaccaro
                   </div>
                 </td>
-                <td className="order-date">Nov 15, 2023</td>
-                <td className="order-price">$150,000</td>
+                <td
+                  className="order-date"
+                  style={{
+                    color: darkModeTheme ? "rgb(189 187 187)" : "",
+                  }}
+                >
+                  Nov 15, 2023
+                </td>
+                <td
+                  className="order-price"
+                  style={{
+                    color: darkModeTheme ? "rgb(189 187 187)" : "",
+                  }}
+                >
+                  $150,000
+                </td>
                 <td className="red-paid">Refund</td>
                 <td>
                   <div className="flex order-view">
@@ -509,19 +661,44 @@ function MainBody() {
                         fill="#292D32"
                       />
                     </svg>
-                    <p>View</p>
+                    <p
+                      style={{
+                        color: darkModeTheme ? "rgb(189 187 187)" : "",
+                      }}
+                    >
+                      View
+                    </p>
                   </div>
                 </td>
               </tr>
               <tr className="row">
                 <td>
-                  <div className="flex order-name">
+                  <div
+                    className="flex order-name"
+                    style={{
+                      color: darkModeTheme ? "rgb(189 187 187)" : "",
+                    }}
+                  >
                     <img src={woman03} alt="" />
                     Corey Schleifer
                   </div>
                 </td>
-                <td className="order-date">Nov 14, 2023</td>
-                <td className="order-price">$87,000</td>
+                <td
+                  className="order-date"
+                  style={{
+                    color: darkModeTheme ? "rgb(189 187 187)" : "",
+                  }}
+                >
+                  Nov 14, 2023
+                </td>
+                <td
+                  className="order-price"
+                  style={{
+                    color: darkModeTheme ? "rgb(189 187 187)" : "",
+                  }}
+                >
+                  $87,000
+                </td>
                 <td className="green-paid">Paid</td>
                 <td>
                   <div className="flex order-view">
@@ -549,19 +726,44 @@ function MainBody() {
                         fill="#292D32"
                       />
                     </svg>
-                    <p>View</p>
+                    <p
+                      style={{
+                        color: darkModeTheme ? "rgb(189 187 187)" : "",
+                      }}
+                    >
+                      View
+                    </p>
                   </div>
                 </td>
               </tr>
               <tr className="row">
                 <td>
-                  <div className="flex order-name">
+                  <div
+                    className="flex order-name"
+                    style={{
+                      color: darkModeTheme ? "rgb(189 187 187)" : "",
+                    }}
+                  >
                     <img src={woman04} alt="" />
                     Cooper Press
                   </div>
                 </td>
-                <td className="order-date">Nov 14, 2023</td>
-                <td className="order-price">$100,000</td>
+                <td
+                  className="order-date"
+                  style={{
+                    color: darkModeTheme ? "rgb(189 187 187)" : "",
+                  }}
+                >
+                  Nov 14, 2023
+                </td>
+                <td
+                  className="order-price"
+                  style={{
+                    color: darkModeTheme ? "rgb(189 187 187)" : "",
+                  }}
+                >
+                  $100,000
+                </td>
                 <td className="red-paid">Paid</td>
                 <td>
                   <div className="flex order-view">
@@ -589,19 +791,44 @@ function MainBody() {
                         fill="#292D32"
                       />
                     </svg>
-                    <p>View</p>
+                    <p
+                      style={{
+                        color: darkModeTheme ? "rgb(189 187 187)" : "",
+                      }}
+                    >
+                      View
+                    </p>
                   </div>
                 </td>
               </tr>
               <tr className="row">
                 <td>
-                  <div className="flex order-name">
+                  <div
+                    className="flex order-name"
+                    style={{
+                      color: darkModeTheme ? "rgb(189 187 187)" : "",
+                    }}
+                  >
                     <img src={Man05} alt="" />
                     Phillip Lubin
                   </div>
                 </td>
-                <td className="order-date">Nov 13, 2023</td>
-                <td className="order-price">$78,000</td>
+                <td
+                  className="order-date"
+                  style={{
+                    color: darkModeTheme ? "rgb(189 187 187)" : "",
+                  }}
+                >
+                  Nov 13, 2023
+                </td>
+                <td
+                  className="order-price"
+                  style={{
+                    color: darkModeTheme ? "rgb(189 187 187)" : "",
+                  }}
+                >
+                  $78,000
+                </td>
                 <td className="green-paid">Paid</td>
                 <td>
                   <div className="flex order-view">
@@ -629,16 +856,32 @@ function MainBody() {
                         fill="#292D32"
                       />
                     </svg>
-                    <p>View</p>
+                    <p
+                      style={{
+                        color: darkModeTheme ? "rgb(189 187 187)" : "",
+                      }}
+                    >
+                      View
+                    </p>
                   </div>
                 </td>
               </tr>
             </table>
           </div>
         </div>
-        <div className="top-platform">
+        <div
+          className={`top-platform ${
+            darkModeTheme ? "sales-trend-dark-mode" : "sales-trend-light-mode"
+          }`}
+        >
           <div className="sales-trend-header">
-            <h3>Top Platform</h3>
+            <h3
+              style={{
+                color: darkModeTheme ? "rgb(255, 255, 255)" : "",
+              }}
+            >
+              Top Platform
+            </h3>
             <div className="sales-trend-header-right">
               <p id="green-link" className="green-link">
                 See All
@@ -647,7 +890,13 @@ function MainBody() {
           </div>
           <div>
             <div className="tp_content">
-              <p>Book Bazaar</p>
+              <p
+                style={{
+                  color: darkModeTheme ? "rgb(255, 255, 255)" : "",
+                }}
+              >
+                Book Bazaar
+              </p>
               <input
                 value={15}
                 type="range"
@@ -656,12 +905,32 @@ function MainBody() {
                 onChange={(e) => console.log(e.target.value)} // Add your onChange handler
               />
               <div className="sales-trend-header">
-                <p className="tp_amount">$2,500,000</p>
-                <p className="tp_amount">+15%</p>
+                <p
+                  className="tp_amount"
+                  style={{
+                    color: darkModeTheme ? "rgb(189 187 187)" : "",
+                  }}
+                >
+                  $2,500,000
+                </p>
+                <p
+                  className="tp_amount"
+                  style={{
+                    color: darkModeTheme ? "rgb(189 187 187)" : "",
+                  }}
+                >
+                  +15%
+                </p>
               </div>
             </div>
             <div className="tp_content">
-              <p>Artisan Aisle</p>
+              <p
+                style={{
+                  color: darkModeTheme ? "rgb(255, 255, 255)" : "",
+                }}
+              >
+                Artisan Aisle
+              </p>
               <input
                 type="range"
                 id="aisle_range"
@@ -670,12 +939,32 @@ function MainBody() {
                 onChange={(e) => console.log(e.target.value)} // Add your onChange handler
               />
               <div className="sales-trend-header">
-                <p className="tp_amount">$1,800,000</p>
-                <p className="tp_amount">+10%</p>
+                <p
+                  className="tp_amount"
+                  style={{
+                    color: darkModeTheme ? "rgb(189 187 187)" : "",
+                  }}
+                >
+                  $1,800,000
+                </p>
+                <p
+                  className="tp_amount"
+                  style={{
+                    color: darkModeTheme ? "rgb(189 187 187)" : "",
+                  }}
+                >
+                  +10%
+                </p>
               </div>
             </div>
             <div className="tp_content">
-              <p>Toy Troop</p>
+              <p
+                style={{
+                  color: darkModeTheme ? "rgb(255, 255, 255)" : "",
+                }}
+              >
+                Toy Troop
+              </p>
               <input
                 type="range"
                 id="toytroop_range"
@@ -684,12 +973,32 @@ function MainBody() {
                 onChange={(e) => console.log(e.target.value)} // Add your onChange handler
               />
               <div className="sales-trend-header">
-                <p className="tp_amount">$1,200,000</p>
-                <p className="tp_amount">+8%</p>
+                <p
+                  className="tp_amount"
+                  style={{
+                    color: darkModeTheme ? "rgb(189 187 187)" : "",
+                  }}
+                >
+                  $1,200,000
+                </p>
+                <p
+                  className="tp_amount"
+                  style={{
+                    color: darkModeTheme ? "rgb(189 187 187)" : "",
+                  }}
+                >
+                  +8%
+                </p>
               </div>
             </div>
             <div className="tp_content">
-              <p>XStore</p>
+              <p
+                style={{
+                  color: darkModeTheme ? "rgb(255, 255, 255)" : "",
+                }}
+              >
+                XStore
+              </p>
               <input
                 type="range"
                 value={7}
@@ -698,8 +1007,22 @@ function MainBody() {
                 onChange={(e) => console.log(e.target.value)} // Add your onChange handler
               />
               <div className="sales-trend-header">
-                <p className="tp_amount">$1,200,000</p>
-                <p className="tp_amount">+7%</p>
+                <p
+                  className="tp_amount"
+                  style={{
+                    color: darkModeTheme ? "rgb(189 187 187)" : "",
+                  }}
+                >
+                  $1,200,000
+                </p>
+                <p
+                  className="tp_amount"
+                  style={{
+                    color: darkModeTheme ? "rgb(189 187 187)" : "",
+                  }}
+                >
+                  +7%
+                </p>
               </div>
             </div>
           </div>
@@ -707,6 +1030,6 @@ function MainBody() {
       </div>
     </div>
   );
-}
+};
 
 export default MainBody;

@@ -210,7 +210,7 @@ const svgData = [
   },
 ];
 
-const SideBar = () => {
+const SideBar = ({ darkModeTheme, toggleDarkMode }) => {
   const [activeItemId, setActiveItemId] = useState(null);
 
   const handleItemClick = (id) => {
@@ -226,7 +226,11 @@ const SideBar = () => {
     }
   };
   return (
-    <div className="sideBar">
+    <div
+      className={`sideBar ${
+        darkModeTheme ? "sidebar-dark-mode" : "sidebar-light-mode"
+      }`}
+    >
       <div className="nav-item-1">
         <Tooltip
           place="bottom"
@@ -279,8 +283,16 @@ const SideBar = () => {
           </>
         ))}
 
-        <div className="theme-switch">
-          <div className="light-theme-container">
+        <div
+          className="theme-switch"
+          onClick={toggleDarkMode}
+          style={{
+            backgroundColor: darkModeTheme ? "#1c1c1c" : "",
+            // transform: darkModeTheme ? "rotate(180deg)" : "",
+            transition: "all 0.3s ease", // Add the transition property here
+          }}
+        >
+          <div className={`${darkModeTheme ? "" : "light-theme-container"}`}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="18"
@@ -338,7 +350,7 @@ const SideBar = () => {
               </defs>
             </svg>
           </div>
-          <div className="dark-theme-container">
+          <div className={`${darkModeTheme ? "light-theme-container" : ""}`}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="30"

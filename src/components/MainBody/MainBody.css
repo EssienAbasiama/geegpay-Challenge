@@ -17,10 +17,20 @@
 .sales-trend {
   width: 60%;
   border-radius: 14px;
-  border: 1px solid #edf2f7;
+
   height: 24rem;
-  background: #fff;
+
   padding: 20px;
+}
+.sales-trend-light-mode {
+  border: 1px solid #edf2f7;
+  background: #fff;
+}
+
+.sales-trend-dark-mode {
+  border: 1px solid #534f4f;
+  background: #000000;
+  color: #fff;
 }
 
 h3 {
@@ -74,9 +84,7 @@ h3 {
 
 .order-detail-container {
   border-radius: 14px;
-  border: 1px solid #edf2f7;
-  /* width: 100%; */
-  background: #fff;
+
   height: 100%;
   width: 50%;
   padding: 16px;
@@ -211,7 +219,7 @@ svg {
   height: max-content;
   width: 40%;
   border-radius: 8px;
-  background: var(--Colors-Basic-White, #fff);
+  /* background: var(--Colors-Basic-White, #fff); */
   padding: 20px 20px;
 }
 table {
@@ -253,9 +261,9 @@ th {
 .lastOrder {
   width: 60%;
   border-radius: 14px;
-  border: 1px solid #edf2f7;
+  /* border: 1px solid #edf2f7; */
   height: max-content;
-  background: #fff;
+  /* background: #fff; */
   padding: 20px;
 }
 .green-paid {
@@ -487,11 +495,11 @@ input[type="range"]::-webkit-slider-thumb {
   .sales-trend {
     width: 60%;
     border-radius: 14px;
-    border: 1px solid #edf2f7;
     height: 22rem;
-    background: #fff;
+
     padding: 20px;
   }
+
   .header {
     z-index: 1000;
   }
