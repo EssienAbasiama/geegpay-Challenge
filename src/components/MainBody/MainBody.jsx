@@ -4,7 +4,7 @@ import Man01 from "./../../assets/images/man01.png";
 import woman02 from "./../../assets/images/woman02.png";
 import woman03 from "./../../assets/images/woman03.png";
 import woman04 from "./../../assets/images/woman04.png";
-import Man05 from "./../../assets/images/Man05.png";
+import Man05 from "./../../assets/images/man05.png";
 import Header from "../Header/Header";
 import Charts from "../Chart";
 
