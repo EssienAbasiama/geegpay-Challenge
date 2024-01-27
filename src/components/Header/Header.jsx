@@ -134,11 +134,19 @@ const Header = ({ darkModeTheme }) => {
           </div> */}
         </div>
         {sideBarOpened ? (
-          <span class="material-symbols-outlined" onClick={handleIconClick}>
+          <span
+            style={{ cursor: "pointer" }}
+            className="material-symbols-outlined"
+            onClick={handleIconClick}
+          >
             menu_open
           </span>
         ) : (
-          <span class="material-symbols-outlined" onClick={handleIconClick}>
+          <span
+            style={{ cursor: "pointer" }}
+            className="material-symbols-outlined"
+            onClick={handleIconClick}
+          >
             menu
           </span>
         )}
