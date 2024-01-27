@@ -33,7 +33,7 @@ const svgData = [
         />
       </svg>
     ),
-    name: "Name",
+    name: "Dashboard",
     position: "right",
   },
   {
@@ -77,7 +77,7 @@ const svgData = [
       </svg>
     ),
     name: "Trend",
-    position: "bottom",
+    position: "right",
   },
   {
     id: 3,
@@ -120,7 +120,7 @@ const svgData = [
       </svg>
     ),
     name: "Box",
-    position: "top",
+    position: "right",
   },
   {
     id: 4,
