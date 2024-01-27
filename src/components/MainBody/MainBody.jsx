@@ -550,7 +550,12 @@ const MainBody = ({ darkModeTheme }) => {
                   Invoice
                 </th>
               </tr>
-              <tr className="row">
+              <tr
+                className="row"
+                style={{
+                  borderTop: darkModeTheme && "1px solid rgb(46 46 47)",
+                }}
+              >
                 <td>
                   <div
                     className="flex order-name"
@@ -615,7 +620,12 @@ const MainBody = ({ darkModeTheme }) => {
                   </div>
                 </td>
               </tr>
-              <tr className="row">
+              <tr
+                className="row"
+                style={{
+                  borderTop: darkModeTheme && "1px solid rgb(46 46 47)",
+                }}
+              >
                 <td>
                   <div
                     className="flex order-name"
@@ -680,7 +690,12 @@ const MainBody = ({ darkModeTheme }) => {
                   </div>
                 </td>
               </tr>
-              <tr className="row">
+              <tr
+                className="row"
+                style={{
+                  borderTop: darkModeTheme && "1px solid rgb(46 46 47)",
+                }}
+              >
                 <td>
                   <div
                     className="flex order-name"
@@ -745,7 +760,12 @@ const MainBody = ({ darkModeTheme }) => {
                   </div>
                 </td>
               </tr>
-              <tr className="row">
+              <tr
+                className="row"
+                style={{
+                  borderTop: darkModeTheme && "1px solid rgb(46 46 47)",
+                }}
+              >
                 <td>
                   <div
                     className="flex order-name"
