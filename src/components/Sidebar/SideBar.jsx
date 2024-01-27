@@ -211,7 +211,7 @@ const svgData = [
 ];
 
 const SideBar = ({ darkModeTheme, toggleDarkMode }) => {
-  const [activeItemId, setActiveItemId] = useState(null);
+  const [activeItemId, setActiveItemId] = useState(1);
 
   const handleItemClick = (id) => {
     const itemContainer = document.getElementById(`sidebar-item-${id}`);
@@ -225,6 +225,7 @@ const SideBar = ({ darkModeTheme, toggleDarkMode }) => {
       setActiveItemId((prevId) => (prevId === id ? null : id));
     }
   };
+
   return (
     <div
       className={`sideBar displayNone ${
