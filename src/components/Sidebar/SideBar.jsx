@@ -233,15 +233,15 @@ const SideBar = ({ darkModeTheme, toggleDarkMode }) => {
       }`}
     >
       <div className="nav-item-1">
-        <Tooltip
+        {/* <Tooltip
           place="bottom"
           id="Logo"
           style={{ borderRadius: "10px", fontSize: "12px" }}
-        />
+        /> */}
         <div
-          data-tooltip-id="Logo"
-          data-tooltip-content="Logo"
-          data-tooltip-place="Top"
+        // data-tooltip-id="Logo"
+        // data-tooltip-content="Logo"
+        // data-tooltip-place="Top"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
