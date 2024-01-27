@@ -907,6 +907,7 @@ const MainBody = ({ darkModeTheme }) => {
                 Book Bazaar
               </p>
               <input
+                style={{ backgroundColor: darkModeTheme && "#0f0f10" }}
                 value={15}
                 type="range"
                 id="bookBazaar_range"
@@ -941,6 +942,7 @@ const MainBody = ({ darkModeTheme }) => {
                 Artisan Aisle
               </p>
               <input
+                style={{ backgroundColor: darkModeTheme && "#0f0f10" }}
                 type="range"
                 id="aisle_range"
                 value={10}
@@ -975,6 +977,7 @@ const MainBody = ({ darkModeTheme }) => {
                 Toy Troop
               </p>
               <input
+                style={{ backgroundColor: darkModeTheme && "#0f0f10" }}
                 type="range"
                 id="toytroop_range"
                 value={8}
@@ -1009,6 +1012,7 @@ const MainBody = ({ darkModeTheme }) => {
                 XStore
               </p>
               <input
+                style={{ backgroundColor: darkModeTheme && "#0f0f10" }}
                 type="range"
                 value={7}
                 id="xstore_range"
