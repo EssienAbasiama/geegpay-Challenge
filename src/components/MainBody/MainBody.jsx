@@ -926,7 +926,7 @@ const MainBody = ({ darkModeTheme }) => {
             <div className="tp_content">
               <p
                 style={{
-                  color: darkModeTheme && "rgb(20 20 20)",
+                  color: darkModeTheme && "white",
                 }}
               >
                 Book Bazaar
@@ -961,7 +961,7 @@ const MainBody = ({ darkModeTheme }) => {
             <div className="tp_content">
               <p
                 style={{
-                  color: darkModeTheme ? "rgb(20 20 20)" : "",
+                  color: darkModeTheme ? "white" : "",
                 }}
               >
                 Artisan Aisle
@@ -996,7 +996,7 @@ const MainBody = ({ darkModeTheme }) => {
             <div className="tp_content">
               <p
                 style={{
-                  color: darkModeTheme ? "rgb(20 20 20)" : "",
+                  color: darkModeTheme ? "white" : "",
                 }}
               >
                 Toy Troop
@@ -1031,7 +1031,7 @@ const MainBody = ({ darkModeTheme }) => {
             <div className="tp_content">
               <p
                 style={{
-                  color: darkModeTheme ? "rgb(20 20 20)" : "",
+                  color: darkModeTheme ? "white" : "",
                 }}
               >
                 XStore
