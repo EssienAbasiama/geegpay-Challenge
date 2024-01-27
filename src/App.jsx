@@ -5,7 +5,7 @@ import Header from "./components/Header/Header";
 import MainBody from "./components/MainBody/MainBody";
 
 function App() {
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(true);
 
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);

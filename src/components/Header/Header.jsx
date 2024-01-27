@@ -1,8 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Header.css";
 import Profile from "./../../assets/images/HeaderProfile.png";
 
 const Header = ({ darkModeTheme }) => {
+  const [sideBarOpened, setsideBarOpened] = useState(false);
+  const handleIconClick = () => {
+    // Toggle the sidebar state
+    setsideBarOpened(!sideBarOpened);
+
+    // Get the sidebar element by className
+    const sidebarElement = document.querySelector(".sideBar");
+
+    // Toggle the classList
+    if (sidebarElement) {
+      sidebarElement.classList.toggle("displayNone");
+    }
+  };
   return (
     <div
       className={`header ${
@@ -13,7 +26,13 @@ const Header = ({ darkModeTheme }) => {
         <h2>Dashboard</h2>
       </div>
       <div className="header_nav_Item">
-        <div className="search-container">
+        <div
+          className="search-container"
+          style={{
+            border: darkModeTheme ? "1px solid #534f4f" : "1px solid #dadddd",
+            backgroundColor: darkModeTheme ? "#171717" : "#fff",
+          }}
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="18"
@@ -31,7 +50,11 @@ const Header = ({ darkModeTheme }) => {
           {/* <div className="search_icon">
             
           </div> */}
-          <input type="text" placeholder="Search..." />
+          <input
+            style={{ background: "Transparent" }}
+            type="text"
+            placeholder="Search..."
+          />
         </div>
         <div className="date_container">
           <svg
@@ -103,13 +126,22 @@ const Header = ({ darkModeTheme }) => {
           >
             <path
               d="M3.19841 6.20675C3.43891 5.95614 3.81525 5.93336 4.08045 6.1384L4.15643 6.20675L10 12.2955L15.8436 6.20675C16.0841 5.95614 16.4604 5.93336 16.7256 6.1384L16.8016 6.20675C17.0421 6.45735 17.064 6.84951 16.8672 7.12585L16.8016 7.20502L10.479 13.7933C10.2385 14.0439 9.86217 14.0666 9.59697 13.8616L9.52099 13.7933L3.19841 7.20502C2.93386 6.92935 2.93386 6.48241 3.19841 6.20675Z"
-              fill="#0D062D"
+              fill={darkModeTheme ? "white" : "#0D062D"}
             />
           </svg>
           {/* <div>
             
           </div> */}
         </div>
+        {sideBarOpened ? (
+          <span class="material-symbols-outlined" onClick={handleIconClick}>
+            menu_open
+          </span>
+        ) : (
+          <span class="material-symbols-outlined" onClick={handleIconClick}>
+            menu
+          </span>
+        )}
       </div>
     </div>
   );

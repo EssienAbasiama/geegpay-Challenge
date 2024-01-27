@@ -90,13 +90,25 @@ h3 {
   padding: 16px;
 }
 
-.sales-graph {
+/* .sales-graph {
   display: flex;
   flex-direction: column;
   height: 24rem;
   width: 40%;
   justify-content: space-between;
   gap: 20px;
+} */
+.sales-graph {
+  display: flex;
+  flex-direction: column;
+  height: 24rem;
+  width: 100%;
+  justify-content: space-between;
+  gap: 20px;
+}
+.sales-graph-container {
+  height: 24rem;
+  width: 40%;
 }
 .order-item-header {
   display: flex;
@@ -155,7 +167,7 @@ h3 {
   color: #606060;
 
   font-family: "Inter";
-  font-size: 14px;
+  font-size: 13px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
@@ -421,7 +433,9 @@ input[type="range"]::-webkit-slider-thumb {
 .chart-container {
   margin-top: 20px;
 }
-
+.material-symbols-outlined {
+  display: none;
+}
 @media screen and (max-width: 1339px) {
   .order-footer > p {
     color: #606060;
@@ -463,6 +477,10 @@ input[type="range"]::-webkit-slider-thumb {
     align-items: center;
     gap: 12px;
   }
+  .sales-graph-container {
+    height: 22rem;
+    width: 40%;
+  }
   .top-container {
     padding: 25px;
     display: flex;
@@ -475,7 +493,7 @@ input[type="range"]::-webkit-slider-thumb {
     display: flex;
     flex-direction: column;
     height: 22rem;
-    width: 40%;
+    width: 100%;
     /* justify-content: space-between; */
     gap: 12px;
   }
@@ -524,6 +542,26 @@ input[type="range"]::-webkit-slider-thumb {
   .pricechart {
     width: 90px;
   }
+  .sales-graph-container {
+    height: 22rem;
+    width: 40%;
+  }
+  .top-container {
+    padding: 25px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 10vh;
+  }
+  .sales-graph {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 22rem;
+    width: 100%;
+    /* justify-content: space-between; */
+    gap: 12px;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -536,12 +574,19 @@ input[type="range"]::-webkit-slider-thumb {
   }
 
   .sideBar {
-    display: none;
     width: 10%;
     z-index: 10000;
+    transition: all 0.5s ease-in-out;
+  }
+  .displayNone {
+    margin-left: -10%;
   }
   .body {
     margin-left: 0;
+    width: 100%;
+  }
+  .sales-graph-container {
+    height: 26rem;
     width: 100%;
   }
   .top-container {
@@ -592,5 +637,101 @@ input[type="range"]::-webkit-slider-thumb {
   }
   .order-footer > p {
     font-size: 16px;
+  }
+  .material-symbols-outlined {
+    display: block;
+  }
+  .pricechart {
+    height: 40px;
+    width: 140px;
+  }
+}
+
+@media screen and (max-width: 465px) {
+  .sales-trend {
+    width: 100%;
+    height: 24rem;
+  }
+  input {
+    width: 6rem;
+  }
+  .date_container {
+    display: none;
+  }
+  .sideBar {
+    width: 15%;
+  }
+  .displayNone {
+    margin-left: -15%;
+  }
+  /*  */
+  .sales-graph {
+    gap: 20px;
+    flex-direction: row;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    height: 13rem;
+  }
+  .order {
+    width: 100%;
+    height: 100%;
+  }
+  .top-container,
+  .bottom-container {
+    padding: 15px 15px;
+  }
+  table {
+    border-collapse: collapse;
+    width: max-content;
+  }
+  td,
+  th {
+    padding: 15px 15px;
+  }
+  table {
+    border-collapse: collapse;
+    width: max-content;
+    margin-top: 12px;
+  }
+  .table_container {
+    overflow-x: scroll;
+  }
+  .chart-container {
+    width: 100%;
+    overflow-x: scroll; /* Enable horizontal scrolling */
+    overflow-y: hidden; /* Hide vertical scrollbar */
+  }
+
+  /* You can also use the following to hide both scrollbars on modern browsers */
+  .chart-container::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for Chrome, Safari, and Edge */
+  }
+  .pricechart {
+    height: 50px;
+    width: 150px;
+  }
+  .order {
+    width: max-content;
+    height: 100%;
+  }
+  .sales-graph {
+    gap: 20px;
+    flex-direction: row;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    height: 13rem;
+  }
+  .sales-graph::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for Chrome, Safari, and Edge */
+  }
+  .order-detail-container {
+    width: 19rem;
+  }
+  .sales-graph-container {
+    height: max-content;
+    width: 100%;
+  }
+  .table_container::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for Chrome, Safari, and Edge */
   }
 }

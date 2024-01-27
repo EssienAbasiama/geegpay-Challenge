@@ -49,8 +49,8 @@ const data = [
   },
   {
     name: "Jul",
-    uv: "10.000",
-    tickCount: 35,
+    uv: "28.000",
+    tickCount: 30,
   },
   {
     name: "Aug",
@@ -144,17 +144,20 @@ const GradientBar = ({ fill, x, y, width, height }) => {
 
 export default function Charts({ darkModeTheme }) {
   const [chartHeight, setChartHeight] = useState(300);
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
 
   useEffect(() => {
     const handleResize = () => {
-      const screenWidth = window.innerWidth;
+      const newScreenWidth = window.innerWidth;
+      setScreenWidth(newScreenWidth);
 
       // Adjust the height based on the screen width
-      if (screenWidth <= 1122) {
-        setChartHeight(270);
-      }
-      if (screenWidth <= 768) {
+      if (newScreenWidth <= 1122 && newScreenWidth > 768) {
+        setChartHeight(265);
+      } else if (newScreenWidth <= 768 && newScreenWidth > 465) {
         setChartHeight(305);
+      } else if (newScreenWidth <= 465) {
+        setChartHeight(300);
       } else {
         setChartHeight(300); // Default height for larger screens
       }
@@ -169,8 +172,12 @@ export default function Charts({ darkModeTheme }) {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
+
   return (
-    <ResponsiveContainer width="100%" height={chartHeight}>
+    <ResponsiveContainer
+      width={screenWidth <= 465 ? 700 : "100%"}
+      height={chartHeight}
+    >
       <BarChart
         width="fit-content"
         height={300}

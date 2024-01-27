@@ -54,8 +54,8 @@ input::placeholder {
   height: 42px;
   width: max-content;
   border-radius: 50px;
-  border: 1px solid #dadddd;
-  background: var(--Neutral-White, #fff);
+  /* border: 1px solid #dadddd; */
+  /* background: var(--Neutral-White, #fff); */
 }
 input {
   width: 18rem;

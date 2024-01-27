@@ -227,7 +227,7 @@ const SideBar = ({ darkModeTheme, toggleDarkMode }) => {
   };
   return (
     <div
-      className={`sideBar ${
+      className={`sideBar displayNone ${
         darkModeTheme ? "sidebar-dark-mode" : "sidebar-light-mode"
       }`}
     >
